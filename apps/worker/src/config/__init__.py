@@ -16,7 +16,7 @@ APP_ENV = os.environ.get("APP_ENV", "Dev")
 # APP_ENV == Dev -> config.settings.DevConfig will be chosen.
 # APP_ENV == Production -> config.settings.ProductionConfig will be chosen
 # APP_ENV == Test -> config.settings.TestConfig will be chosen
-_current = getattr(sys.modules["config.settings"], "{0}Config".format(APP_ENV))()
+_current = getattr(sys.modules["config.settings"], "{0}Config".format(APP_ENV).capitalize())()
 
 # Copy Chosen Settings class attributes and values
 # in order to setup the desired flask environment.
